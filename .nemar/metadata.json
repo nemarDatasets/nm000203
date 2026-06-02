@@ -1,6 +1,11 @@
 {
   "version": "2.0",
   "pipeline_stage": "validated",
+  "title": "P300 dataset from initial spot study",
+  "description": "An auditory oddball event-related potential dataset from 13 healthy subjects designed to evaluate closed-loop optimization of stimulus onset asynchrony in brain-computer interfaces. The study employed 31-channel EEG recordings at 1000 Hz while subjects discriminated target (1000 Hz) and non-target (500 Hz) tones presented at variable stimulus intervals. This derivative dataset supports investigation of Bayesian optimization and random search strategies for automated selection of individually optimal stimulation parameters to enhance BCI decoding performance.",
+  "methods_description": "EEG data were acquired from 13 healthy subjects using a BrainProducts BrainAmp DC amplifier with 31 passive Ag/AgCl electrodes sampled at 1000 Hz. Subjects performed an auditory oddball task with target (1000 Hz) and non-target (500 Hz) tones presented at variable stimulus onset asynchronies (60-600 ms). The experiment consisted of an optimization phase (four strategies: AUC-ucb, AUC-rand, P300-ucb, P300-rand, each 20 minutes) and validation phase (20 trials per SOA). Classification employed regularized linear discriminant analysis with automatic shrinkage regularization and 13-fold cross-validation. Features were mean amplitudes in five time intervals across 31 channels.",
+  "license": "CC-BY-SA-4.0",
+  "dataset_type": "derivative",
   "authors": {
     "Jan Sosulski": {
       "orcid": "0000-0002-8105-3395"
@@ -11,6 +16,32 @@
       "orcid": "0000-0001-6729-0290"
     }
   },
+  "keywords": [
+    {
+      "term": "EEG"
+    },
+    {
+      "term": "Event-Related Potentials, P300",
+      "subject_scheme": "MeSH",
+      "scheme_uri": "https://id.nlm.nih.gov/mesh/",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D018913"
+    },
+    {
+      "term": "brain-computer interfaces"
+    },
+    {
+      "term": "Bayesian optimization"
+    },
+    {
+      "term": "auditory oddball"
+    },
+    {
+      "term": "stimulus onset asynchrony"
+    },
+    {
+      "term": "machine learning classification"
+    }
+  ],
   "related_identifiers": [
     {
       "identifier": "10.6094/UNIFR/154576",
@@ -31,6 +62,16 @@
       "identifier": "10.48550/arXiv.2109.06011",
       "identifier_type": "DOI",
       "relation_type": "IsDescribedBy"
+    },
+    {
+      "identifier": "10.21105/joss.01896",
+      "identifier_type": "DOI",
+      "relation_type": "References"
+    },
+    {
+      "identifier": "10.1038/s41597-019-0104-8",
+      "identifier_type": "DOI",
+      "relation_type": "References"
     }
   ],
   "funding_references": [
@@ -49,14 +90,11 @@
       "award_number": "INST 39/963-1 FUGG"
     }
   ],
-  "title": "P300 dataset from initial spot study",
-  "license": "CC-BY-SA-4.0",
-  "dataset_type": "derivative",
   "resource_type_general": "Dataset",
+  "resource_type_specific": "EEG Dataset",
   "modalities": [
     "eeg"
   ],
-  "resource_type_specific": "EEG Dataset",
   "sizes": [
     "3.0 GB (801 files)"
   ],
@@ -68,33 +106,5 @@
     ".yaml",
     ".yml"
   ],
-  "description": "An auditory oddball event-related potential dataset from 13 healthy subjects designed to evaluate closed-loop optimization of stimulus onset asynchrony in brain-computer interfaces. The study employed 31-channel EEG recorded at 1000 Hz during presentation of target (1000 Hz) and non-target (500 Hz) tones at varying stimulus intervals, with machine learning-based classification using regularized linear discriminant analysis to identify individually optimal stimulation parameters.",
-  "methods_description": "EEG data were acquired from 13 healthy subjects (mean age 22.7±1.64 years) using a 31-channel BrainProducts BrainAmp DC system at 1000 Hz sampling rate with nose reference and passive Ag/AgCl sensors. Subjects performed an auditory oddball task with target (1000 Hz) and non-target (500 Hz) tones presented at variable stimulus onset asynchronies (60-600 ms). The experiment consisted of an optimization phase (four strategies allocated 20 minutes each) and a validation phase (20 trials per stimulus onset asynchrony). Feature extraction used mean amplitudes across five time intervals (100-500 ms) and 31 channels, with classification performed using regularized linear discriminant analysis and 13-fold cross-validation.",
-  "keywords": [
-    {
-      "term": "EEG"
-    },
-    {
-      "term": "Event-Related Potentials, P300",
-      "subject_scheme": "MeSH",
-      "scheme_uri": "https://id.nlm.nih.gov/mesh/",
-      "value_uri": "http://id.nlm.nih.gov/mesh/D018913"
-    },
-    {
-      "term": "brain-computer interfaces"
-    },
-    {
-      "term": "auditory oddball paradigm"
-    },
-    {
-      "term": "Bayesian optimization"
-    },
-    {
-      "term": "stimulus onset asynchrony"
-    },
-    {
-      "term": "machine learning classification"
-    }
-  ],
-  "source_hash": "db097421a63afc75d144a516896356262a7129c332d064f0833b80dd829054b5"
+  "source_hash": "3f627adbd7a767ce8a9b3f8c2728ccc94ea1e1f46181cc312fe9bd1d3efab1ac"
 }
