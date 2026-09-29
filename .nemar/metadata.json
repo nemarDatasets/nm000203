@@ -2,8 +2,8 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "P300 dataset from initial spot study",
-  "description": "An auditory oddball event-related potential dataset from 13 healthy subjects designed to evaluate closed-loop optimization of stimulus onset asynchrony in brain-computer interfaces. The study employed 31-channel EEG recordings at 1000 Hz while subjects discriminated target (1000 Hz) and non-target (500 Hz) tones presented at variable stimulus intervals. This derivative dataset supports investigation of Bayesian optimization and random search strategies for automated selection of individually optimal stimulation parameters to enhance BCI decoding performance.",
-  "methods_description": "EEG data were acquired from 13 healthy subjects using a BrainProducts BrainAmp DC amplifier with 31 passive Ag/AgCl electrodes sampled at 1000 Hz. Subjects performed an auditory oddball task with target (1000 Hz) and non-target (500 Hz) tones presented at variable stimulus onset asynchronies (60-600 ms). The experiment consisted of an optimization phase (four strategies: AUC-ucb, AUC-rand, P300-ucb, P300-rand, each 20 minutes) and validation phase (20 trials per SOA). Classification employed regularized linear discriminant analysis with automatic shrinkage regularization and 13-fold cross-validation. Features were mean amplitudes in five time intervals across 31 channels.",
+  "description": "An auditory oddball P300 EEG dataset from 13 healthy participants, recorded with 31 channels at 1000 Hz. Target (1000 Hz) and non-target (500 Hz) tones were presented at stimulus onset asynchronies from 60 to 600 ms. The dataset supports closed-loop optimization of stimulation speed in auditory brain-computer interfaces, using random search and Bayesian optimization to maximize regularized LDA classification performance.",
+  "methods_description": "The experiment had an optimization part and a validation part. In the optimization part, four strategies (AUC-ucb, AUC-rand, P300-ucb, P300-rand) each had 20 minutes to find an optimal SOA. In the validation part, the resulting SOAs and a fixed 60 ms SOA were tested with 20 trials each. EEG was recorded with a BrainProducts BrainAmp DC and passive Ag/AgCl electrodes, referenced to the nose. Features were mean amplitudes in 5 time intervals across 31 channels and were classified with shrinkage rLDA using 13-fold cross-validation.",
   "license": "CC-BY-SA-4.0",
   "dataset_type": "derivative",
   "authors": {
@@ -21,10 +21,10 @@
       "term": "EEG"
     },
     {
-      "term": "Event-Related Potentials, P300",
-      "subject_scheme": "MeSH",
-      "scheme_uri": "https://id.nlm.nih.gov/mesh/",
-      "value_uri": "http://id.nlm.nih.gov/mesh/D018913"
+      "term": "P300"
+    },
+    {
+      "term": "auditory event-related potentials"
     },
     {
       "term": "brain-computer interfaces"
@@ -33,13 +33,12 @@
       "term": "Bayesian optimization"
     },
     {
-      "term": "auditory oddball"
-    },
-    {
       "term": "stimulus onset asynchrony"
     },
     {
-      "term": "machine learning classification"
+      "term": "Event-Related Potentials, P300",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D018913"
     }
   ],
   "related_identifiers": [
@@ -50,11 +49,6 @@
     },
     {
       "identifier": "https://github.com/nemarDatasets/nm000203",
-      "identifier_type": "URL",
-      "relation_type": "IsDescribedBy"
-    },
-    {
-      "identifier": "https://nemar.org/dataexplorer/detail?dataset_id=nm000203",
       "identifier_type": "URL",
       "relation_type": "IsDescribedBy"
     },
@@ -72,22 +66,28 @@
       "identifier": "10.1038/s41597-019-0104-8",
       "identifier_type": "DOI",
       "relation_type": "References"
+    },
+    {
+      "identifier": "https://nemar.org/dataset/nm000203",
+      "identifier_type": "URL",
+      "relation_type": "IsDescribedBy"
     }
   ],
   "funding_references": [
     {
-      "funder_name": "DFG",
+      "funder_name": "German Research Foundation (DFG)",
       "award_number": "EXC 1086",
       "award_title": "Cluster of Excellence BrainLinks-BrainTools"
     },
     {
-      "funder_name": "DFG",
+      "funder_name": "German Research Foundation (DFG)",
       "award_number": "TA 1258/1-1",
-      "award_title": "SuitAble project"
+      "award_title": "SuitAble"
     },
     {
-      "funder_name": "DFG",
-      "award_number": "INST 39/963-1 FUGG"
+      "funder_name": "German Research Foundation (DFG)",
+      "award_number": "INST 39/963-1 FUGG",
+      "award_title": "bwHPC, state of Baden-Württemberg"
     }
   ],
   "resource_type_general": "Dataset",
@@ -96,7 +96,7 @@
     "eeg"
   ],
   "sizes": [
-    "3.0 GB (801 files)"
+    "2.82 GB (801 files)"
   ],
   "formats": [
     ".bdf",
